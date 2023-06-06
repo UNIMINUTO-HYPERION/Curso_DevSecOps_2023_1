@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: mysql
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    # (this is just an example, not intended to be a production configuration)
+    ports:
+      - "3306:3306"
+    command: [ "mysqld",
+                    "--default-authentication-plugin=mysql_native_password",
+                    "--skip-ssl" ]
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: snorby
+  
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
+  snorby:
+    image: polinux/snorby
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    # (this is just an example, not intended to be a production configuration)
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_ADDRESS=db
+      - DB_USER=root
+      - DB_PASS=password
+      - OINKCODE=b50b0d83fae4436f24821afd41db163fb23cd7da
+    depends_on:
+      - db      
+    restart: always
+  ids:
+    image: fabriziogaliano/docker-snort-ids
+
+    network_mode: host
+    volumes:
+         - "/etc/localtime:/etc/localtime"
+         - "./rules:/etc/snort/rules"
+         - "./log/snort:/var/log/snort"
+         - "./log/barnyard2:/var/log/barnyard2"
+
+    privileged: false
+
+    environment:
+        SNORT_NET: "192.168.3.103"
+        HOST_INT: "eth0"
+        HOST_NAME: "snort01"
+        PPORK_OINKCODE: "b50b0d83fae4436f24821afd41db163fb23cd7da"
+        BARN_DBUSER: "root"
+        BARN_DBNAME: "snorby"
+        BARN_DBPASS: "password"
+        BARN_DBHOST: "192.168.3.205"
+    depends_on:
+      - db 
+    restart: always
