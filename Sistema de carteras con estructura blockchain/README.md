@@ -54,11 +54,6 @@
 # <a name="documentación del blockchain"></a><a name="_bookmark0"></a>Documentación del Blockchain
 
 ## <a name="_bookmark1"></a>Introducción
-
-Este documento ha sido creado para proporcionar a los equipos de desarrollo y operaciones una guía completa y detallada sobre el proceso de despliegue de este proyecto sobre la integración de herramientas Api Blockchain, IDS Snort-Snorby y monitoreo Zabbix, utilizando metodologías y prácticas de DevOps. Este manual abordará los conceptos fundamentales de DevOps, proporcionando una visión general de los principios y prácticas que lo respaldan. Además, presentaremos un enfoque paso a paso para el despliegue de proyectos utilizando herramientas y técnicas modernas.
-
-El objetivo final de este manual es proporcionar conocimientos necesarios para implementar un flujo de trabajo de desarrollo y despliegue continuo, permitiendo entregar rápidamente software de calidad a usuarios finales. Es importante destacar que este manual asume un conocimiento básico de desarrollo de software, sistemas operativos y herramientas de automatización
-
 El Blockchain es una tecnología de registro distribuido que permite la creación y el mantenimiento de una base de datos segura y transparente. En este documento, se describe el Blockchain desarrollado en Python para el backend y Angular para el frontend, con una base de datos SQL Server.
 
 
