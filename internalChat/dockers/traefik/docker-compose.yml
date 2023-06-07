@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+    reverse-proxy:
+        container_name: traefik
+        image: traefik:2.9
+        restart: unless-stopped
+        security_opt:
+            - no-new-privileges:true
+        ports:
+            - 80:80
+            - 443:443
+            - 7000:7000
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock:ro
+          - ./_config/traefik.yml:/etc/traefik/traefik.yml:ro
+          - ./_config/config.yml:/etc/traefik/config.yml:ro
+          - ./_certs:/etc/certs:ro
+        labels:
+          - "traefik.enable=true" #Nos habilita que lo pueda ver traefik
+          - "traefik.http.routers.traefik=true"
+        networks:
+            - red
+              # alies:
+                # - user.chat.localhost
+                # - chat.chat.localhost #Se agregan para no usar un servidor DNS
+
+networks:
+    red:
+      external: true

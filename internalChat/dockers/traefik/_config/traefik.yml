@@ -1,0 +1,100 @@
+global:
+  sendAnonymousUsage: false
+
+api:
+  dashboard: true
+  insecure: true
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    watch: true
+    exposedByDefault: false
+
+  file:
+    filename: /etc/traefik/config.yml
+    watch: true
+
+log:
+  level: INFO
+  format: common
+
+entryPoints:
+  http:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: https
+          scheme: https
+  https:
+    address: ":443"
+
+  redis:
+    address: ":6379"
+
+  mysql:
+    address: ":3306"
+
+  # Agrega la entrada para WebSocket
+  wss:
+    address: ":7000"
+
+
+# Configuración del Circuit Breaker
+http:
+  middlewares:
+    chatservice-cb:
+      circuitBreaker:
+        expression: "ResponseCodeRatio(500, 600, 0, 600) > 0.10 || NetworkErrorRatio() > 0.10 || LatencyAtQuantileMS(50.0) > 100"
+        #* Activa el disyuntor cuando el 30% de las solicitudes devuelven un código de estado 5XX, o cuando la proporción de errores de red alcanza el 10%.
+        #* La latencyAtQuantileMS(50.0) > 100 expresión activa el disyuntor cuando el 50% de las solicitudes tardan más de 100 ms en completarse.
+    userservice-cb:
+      circuitBreaker:
+        expression: "ResponseCodeRatio(500, 600, 0, 600) > 0.30 || NetworkErrorRatio() > 0.10"
+
+  services:
+    chatservice:
+      loadBalancer:
+        servers:
+          url: "http://chat.chat.localhost"
+          #* Seteamos las Replicas a 1 para que no se cree un contenedor de más
+          minReplicas: 2
+          maxReplicas: 5
+          #* Seteamos el CPU a 50% para que no consuma más de lo necesario
+          cpu:
+              usage:
+                target: 50
+              requests:
+                min: 2
+                max: 4
+              limits:
+                min: 3
+                max: 6
+
+      middlewares:
+        - chatservice-cb
+    memcached:
+      loadBalancer:
+        servers:
+          - url: "http://memcached:11211"
+
+    userservice:
+      loadBalancer:
+        servers:
+          url: "http://user.chat.localhost"
+          #* Seteamos las Replicas a 1 para que no se cree un contenedor de más
+          minReplicas: 2
+          maxReplicas: 5
+          #* Seteamos el CPU a 50% para que no consuma más de lo necesario
+          cpu:
+              usage:
+                target: 50
+              requests:
+                min: 2
+                max: 4
+              limits:
+                min: 3
+                max: 6
+      middlewares:
+        - userservice-cb
