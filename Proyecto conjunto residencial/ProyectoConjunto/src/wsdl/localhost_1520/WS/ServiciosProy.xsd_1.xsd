@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://serviciosproyecto/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://serviciosproyecto/">
+
+<xs:element name="Login" type="tns:Login"></xs:element>
+
+<xs:element name="LoginResponse" type="tns:LoginResponse"></xs:element>
+
+<xs:element name="actualizarEstado" type="tns:actualizarEstado"></xs:element>
+
+<xs:element name="actualizarEstadoResponse" type="tns:actualizarEstadoResponse"></xs:element>
+
+<xs:element name="actualizarIntento" type="tns:actualizarIntento"></xs:element>
+
+<xs:element name="actualizarIntentoResponse" type="tns:actualizarIntentoResponse"></xs:element>
+
+<xs:element name="actualizarMascota" type="tns:actualizarMascota"></xs:element>
+
+<xs:element name="actualizarMascotaResponse" type="tns:actualizarMascotaResponse"></xs:element>
+
+<xs:element name="actualizarResidente" type="tns:actualizarResidente"></xs:element>
+
+<xs:element name="actualizarResidenteResponse" type="tns:actualizarResidenteResponse"></xs:element>
+
+<xs:element name="actualizarVehiculo" type="tns:actualizarVehiculo"></xs:element>
+
+<xs:element name="actualizarVehiculoResponse" type="tns:actualizarVehiculoResponse"></xs:element>
+
+<xs:element name="agregarMascota" type="tns:agregarMascota"></xs:element>
+
+<xs:element name="agregarMascotaResponse" type="tns:agregarMascotaResponse"></xs:element>
+
+<xs:element name="agregarVehiculo" type="tns:agregarVehiculo"></xs:element>
+
+<xs:element name="agregarVehiculoResponse" type="tns:agregarVehiculoResponse"></xs:element>
+
+<xs:element name="cambiarClave" type="tns:cambiarClave"></xs:element>
+
+<xs:element name="cambiarClaveResponse" type="tns:cambiarClaveResponse"></xs:element>
+
+<xs:element name="consultaResMoroso" type="tns:consultaResMoroso"></xs:element>
+
+<xs:element name="consultaResMorosoResponse" type="tns:consultaResMorosoResponse"></xs:element>
+
+<xs:element name="consultarIntento" type="tns:consultarIntento"></xs:element>
+
+<xs:element name="consultarIntentoResponse" type="tns:consultarIntentoResponse"></xs:element>
+
+<xs:element name="consultarMascotas" type="tns:consultarMascotas"></xs:element>
+
+<xs:element name="consultarMascotasResponse" type="tns:consultarMascotasResponse"></xs:element>
+
+<xs:element name="consultarResidente" type="tns:consultarResidente"></xs:element>
+
+<xs:element name="consultarResidenteResponse" type="tns:consultarResidenteResponse"></xs:element>
+
+<xs:element name="consultarVehiculos" type="tns:consultarVehiculos"></xs:element>
+
+<xs:element name="consultarVehiculosResponse" type="tns:consultarVehiculosResponse"></xs:element>
+
+<xs:element name="eliminarMascota" type="tns:eliminarMascota"></xs:element>
+
+<xs:element name="eliminarMascotaResponse" type="tns:eliminarMascotaResponse"></xs:element>
+
+<xs:element name="eliminarResidente" type="tns:eliminarResidente"></xs:element>
+
+<xs:element name="eliminarResidenteResponse" type="tns:eliminarResidenteResponse"></xs:element>
+
+<xs:element name="eliminarVehiculos" type="tns:eliminarVehiculos"></xs:element>
+
+<xs:element name="eliminarVehiculosResponse" type="tns:eliminarVehiculosResponse"></xs:element>
+
+<xs:element name="registrarResidente" type="tns:registrarResidente"></xs:element>
+
+<xs:element name="registrarResidenteResponse" type="tns:registrarResidenteResponse"></xs:element>
+
+<xs:element name="validarAdmon" type="tns:validarAdmon"></xs:element>
+
+<xs:element name="validarAdmonResponse" type="tns:validarAdmonResponse"></xs:element>
+
+<xs:element name="validarEstadoBloqueo" type="tns:validarEstadoBloqueo"></xs:element>
+
+<xs:element name="validarEstadoBloqueoResponse" type="tns:validarEstadoBloqueoResponse"></xs:element>
+
+<xs:element name="validarMascotas" type="tns:validarMascotas"></xs:element>
+
+<xs:element name="validarMascotasResponse" type="tns:validarMascotasResponse"></xs:element>
+
+<xs:element name="validarParqueadero" type="tns:validarParqueadero"></xs:element>
+
+<xs:element name="validarParqueaderoResponse" type="tns:validarParqueaderoResponse"></xs:element>
+
+<xs:element name="validarResidente" type="tns:validarResidente"></xs:element>
+
+<xs:element name="validarResidenteApto" type="tns:validarResidenteApto"></xs:element>
+
+<xs:element name="validarResidenteAptoResponse" type="tns:validarResidenteAptoResponse"></xs:element>
+
+<xs:element name="validarResidenteResponse" type="tns:validarResidenteResponse"></xs:element>
+
+<xs:element name="validarVehiculo" type="tns:validarVehiculo"></xs:element>
+
+<xs:element name="validarVehiculoResponse" type="tns:validarVehiculoResponse"></xs:element>
+
+<xs:complexType name="registrarResidente">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registrarResidenteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarMascotas">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarMascotasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarVehiculo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarVehiculoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarResidente">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarResidenteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultaResMoroso">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultaResMorosoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarMascotas">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarMascotasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarMascota">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarMascotaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarAdmon">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarAdmonResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarIntento">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarIntentoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cambiarClave">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cambiarClaveResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarResidente">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarResidenteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarVehiculos">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarVehiculosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarVehiculos">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarVehiculosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarEstado">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarEstadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarResidente">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarResidenteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarMascota">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarMascotaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarResidente">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarResidenteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarVehiculo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarVehiculoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Login">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LoginResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarEstadoBloqueo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarEstadoBloqueoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarVehiculo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarVehiculoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarIntento">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarIntentoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarParqueadero">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarParqueaderoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarResidenteApto">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarResidenteAptoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarMascota">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarMascotaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

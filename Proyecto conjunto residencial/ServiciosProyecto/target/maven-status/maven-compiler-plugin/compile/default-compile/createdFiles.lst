@@ -1,0 +1,4 @@
+serviciosproyecto\Publisher.class
+conexion\ConectarBD.class
+serviciosproyecto\IServicios.class
+serviciosproyecto\Servicios.class
