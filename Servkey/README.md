@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://gitlab.com/servkey/servkey/-/raw/main/img/logo_servkey.png" alt="logo" width="500"/>
+    <a href="https://gitlab.com/servkey"><img src="https://gitlab.com/servkey/servkey/-/raw/main/img/logo_servkey.png" alt="logo" width="500"/></a>
 </div>
 
 # SERVKEY
