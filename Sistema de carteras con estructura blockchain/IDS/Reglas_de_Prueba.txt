@@ -1,52 +1,52 @@
 apt-get install gedit
 gedit /etc/snort/rules/snort.rules
 _______________________________________________________________________________________________________Identificar NMAP Ping Scan
-alert icmp any any -> 192.168.1.105 any (msg: "NMAP ping sweep Scan"; dsize:0;sid:10000004; rev: 1;)
+alert icmp any any -> 172.19.0.0/165 any (msg: "NMAP ping sweep Scan"; dsize:0;sid:10000004; rev: 1;)
 
 snort -A console -q -u snort -g snort -c /etc/snort/snort.conf -i eth0
 
-sudo nmap -sP 192.168.1.10 --disable-arp-ping
+sudo nmap -sP 172.19.0.0/16 --disable-arp-ping
 
 Regrese a su máquina de destino donde el resoplido está capturando todo el tráfico entrante. Aquí, observará que está generando una alerta para el escaneo NMAP Ping Sweep. Por lo tanto, puede bloquear la IP del atacante para proteger su red de un mayor escaneo.
 ______________________________________________________________________________________________________Identificar el análisis TCP NMAP
-alert tcp any any -> 192.168.1.105 22 (msg: "NMAP TCP Scan";sid:10000005; rev:2; )
+alert tcp any any -> 172.19.0.0/165 22 (msg: "NMAP TCP Scan";sid:10000005; rev:2; )
 
 snort -A console -q -u snort -g snort -c /etc/snort/snort.conf -i eth0
 
-sudo nmap -sT -p22 192.168.1.10
+sudo nmap -sT -p22 172.19.0.0/16
 
 Aquí puede confirmar que nuestro snort está funcionando absolutamente cuando el atacante está escaneando el puerto 22 usando el escaneo TCP nmap y muestra la IP del atacante desde donde viene el tráfico en el puerto 22. Por lo tanto, puede bloquear esta IP para proteger su red de un mayor escaneo.
 
 ______________________________________________________________________________________________________Identificar NMAP XMAS Scan
-alert tcp any any -> 192.168.1.105 22 (msg:"Nmap XMAS Tree Scan"; flags:FPU; sid:1000006; rev:1; )
+alert tcp any any -> 172.19.0.0/165 22 (msg:"Nmap XMAS Tree Scan"; flags:FPU; sid:1000006; rev:1; )
 
 snort -A console -q -u snort -g snort -c /etc/snort/snort.conf -i eth0
 
-sudo nmap -sX -p22 192.168.1.10
+sudo nmap -sX -p22 172.19.0.0/16
 
 Regrese a su máquina de destino donde snort está capturando todo el tráfico entrante, aquí observará que está generando una alerta para el escaneo NMAP XMAP. Por lo tanto, puede bloquear la IP del atacante para proteger su red de un mayor escaneo.
 _____________________________________________________________________________________________________Identificar el análisis NMAP FIN
-alert tcp any any -> 192.168.1.10 22 (msg:"Nmap FIN Scan"; flags:F; sid:1000008; rev:1;)
+alert tcp any any -> 172.19.0.0/16 22 (msg:"Nmap FIN Scan"; flags:F; sid:1000008; rev:1;)
 
 snort -A console -q -u snort -g snort -c /etc/snort/snort.conf -i eth0
 
-sudo nmap -sF -p22 192.168.1.10
+sudo nmap -sF -p22 172.19.0.0/16
 
 Regrese a su máquina de destino donde snort está capturando todo el tráfico entrante, aquí observará que está generando una alerta para el escaneo NMAP FIN. Por lo tanto, puede bloquear la IP del atacante para proteger su red de un mayor escaneo.
 ____________________________________________________________________________________________________Identificar el análisis NULL de NMAP
-alert tcp any any -> 192.168.1.10 22 (msg:"Nmap NULL Scan"; flags:0; sid:1000009; rev:1; )
+alert tcp any any -> 172.19.0.0/16 22 (msg:"Nmap NULL Scan"; flags:0; sid:1000009; rev:1; )
 
 snort -A console -q -u snort -g snort -c /etc/snort/snort.conf -i eth0
 
-sudo nmap -sN -p22 192.168.1.10
+sudo nmap -sN -p22 172.19.0.0/16
 
 Regrese a su máquina de destino donde snort está capturando todo el tráfico entrante, aquí observará que está generando una alerta para el escaneo nulo de NMAP. Por lo tanto, puede bloquear la IP del atacante para proteger su red de un mayor escaneo.
 ____________________________________________________________________________________________________Identificar el análisis UDP de NMAP
-alert udp any any -> 192.168.1.105 any ( msg:"Nmap UDP Scan"; sid:1000010; rev:1; )
+alert udp any any -> 172.19.0.0/165 any ( msg:"Nmap UDP Scan"; sid:1000010; rev:1; )
 
 snort -A console -q -u snort -g snort -c /etc/snort/snort.conf -i eth0
 
-sudo nmap -sU -p68 192.168.1.10
+sudo nmap -sU -p68 172.19.0.0/16
 
 Regrese a su máquina de destino donde snort está capturando todo el tráfico entrante, aquí observará que está generando una alerta para el escaneo NMAP UDP. Por lo tanto, puede bloquear la IP del atacante para proteger su red de un mayor escaneo.
 
@@ -54,16 +54,59 @@ Regrese a su máquina de destino donde snort está capturando todo el tráfico e
 
 ________________________________Reglas para copiar
 
-alert icmp any any -> 192.168.1.10 any (msg: "NMAP ping sweep Scan"; dsize:0;sid:10000004; rev: 1;)
-alert tcp any any -> 192.168.1.10 22 (msg: "NMAP TCP Scan";sid:10000005; rev:2; )
-alert tcp any any -> 192.168.1.10 22 (msg:"Nmap XMAS Tree Scan"; flags:FPU; sid:1000006; rev:1; )
-alert tcp any any -> 192.168.1.10 22 (msg:"Nmap FIN Scan"; flags:F; sid:1000008; rev:1;)
-alert tcp any any -> 192.168.1.10 22 (msg:"Nmap NULL Scan"; flags:0; sid:1000009; rev:1; )
-alert udp any any -> 192.168.1.10 any ( msg:"Nmap UDP Scan"; sid:1000010; rev:1; )
-
 
 https://www.hackingarticles.in/detect-nmap-scan-using-snort/
 
 https://www.returngis.net/2020/12/como-funcionan-las-redes-en-docker/
 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+alert icmp any any -> any any (msg: "NMAP ping sweep Scan"; dsize:0;sid:1; rev: 1;)
+alert tcp any any -> any 22 (msg: "NMAP TCP Scan";sid:2; rev:2; )
+alert udp any any -> any 22 ( msg:"Nmap UDP Scan"; sid:3; rev:1; )
+
+docker run --rm -it frapsoft/nmap 192.168.1.10 -sP --disable-arp-ping
+docker run --rm -it frapsoft/nmap 192.168.1.10 -sT -p22
+docker run --rm -it frapsoft/nmap 192.168.1.10 -sU -p68
+
+============================================================================
+
+alert tcp any any -> $HOME_NET any (flags: S; msg: "Escaneo de puertos TCP SYN detectado"; detection_filter: track by_src, count 10, seconds 60; sid: 100001; rev: 10; priority: 1;)
+alert tcp any any -> $HOME_NET any (flags: A; msg: "Escaneo de puertos TCP Connect detectado"; detection_filter: track by_src, count 10, seconds 60; sid: 100002; rev: 6; priority: 2;)
+alert tcp any any -> $HOME_NET any (flags: A; msg: "Escaneo de puertos TCP ACK detectado"; detection_filter: track by_src, count 10, seconds 60; sid: 100003; rev: 6; priority: 3;)
+alert tcp any any -> $HOME_NET any (flags: F; msg: "Escaneo de puertos TCP FIN detectado"; detection_filter: track by_src, count 10, seconds 60; sid: 100004; rev: 6; priority: 4;)
+alert tcp any any -> $HOME_NET any (flags: FPU; msg: "Escaneo de puertos TCP Xmas detectado"; detection_filter: track by_src, count 10, seconds 60; sid: 100005; rev: 3; priority: 5;)
+
+docker run --rm -it frapsoft/nmap 192.168.1.10 -sS
+docker run --rm -it frapsoft/nmap 192.168.1.10 -sA
+docker run --rm -it frapsoft/nmap 192.168.1.10 -sF
+docker run --rm -it frapsoft/nmap 192.168.1.10 -sX
+
+
+docker pull frapsoft/nmap
+docker run frapsoft/nmap
+
+******************************************************************************
+1. Detección de escaneo de puertos TCP SYN:
+
+Método de escaneo: Envía paquetes SYN al objetivo y espera respuestas SYN/ACK.
+Propósito: Determinar puertos abiertos en un objetivo.
+Indicadores de detección: Múltiples intentos de escaneo de puertos TCP SYN.
+
+2. Detección de escaneo de puertos TCP ACK:
+
+Método de escaneo: Envía paquetes ACK al puerto objetivo y analiza las respuestas.
+Propósito: Determinar si un puerto está filtrado por un firewall.
+Indicadores de detección: Múltiples escaneos de puertos TCP ACK.
+
+3. Detección de escaneo de puertos TCP FIN:
+
+Método de escaneo: Envía paquetes FIN al puerto objetivo y analiza las respuestas.
+Propósito: Identificar puertos abiertos o cerrados en un objetivo.
+Indicadores de detección: Múltiples intentos de escaneo de puertos TCP FIN.
+
+4. Detección de escaneo de puertos TCP Xmas:
+
+Método de escaneo: Envía paquetes TCP con las banderas FIN, PSH y URG activadas al puerto objetivo.
+Propósito: Identificar puertos abiertos o cerrados en un objetivo.
+Indicadores de detección: Múltiples intentos de escaneo de puertos TCP Xmas.
