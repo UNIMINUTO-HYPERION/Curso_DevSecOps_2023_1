@@ -61,25 +61,13 @@ Gestor dividido en paquetes mediante el uso de una arquitectura orientada a serv
 2. Controlador: mediante la implementación de método se hace el llamado e invocado de las caractreiticas especificadas en el modelo que proyecta el negocio
 3. Modelo: implementación y caracterización de acciones o servicios (ejemplo: validación de usuario, vista para el rol administrador/residente, activación funcional segun roles).
 
-## REQUERIMIENTOS FUNCIONALES
-
-1. Agregar un residente nuevo en la aplicación web.
-2. Editar datos de cada residente registrado en la aplicación.
-3. Filtrar por torre y apartamento los residentes del conjunto.
-4. Relacionadas con el seguimiento de cartera para recordar a residentes el pago de las obligaciones
-5. Consultar estado de cuentar por los residentes
-6. Registro información de las mascotas en la propiedad
-
-## REQUERIMIENTOS NO FUNCIONALES
-
-1. La aplicación debe ser accesible en cualquier dispositivo ya sea Tablet, celular y computador de escritorio.
-2. La aplicación debe ser accesible las 24 horas y los 7 días a la semana.
-3. Guardar los datos de los residentes en la base de datos.
-
 <h1 align="center"> DIAGRAMA DE CASOS DE USO </h1>
-<div align="center"><img src="https://github.com/jeison25/ProyectoDiplomado/blob/d8f4fa570c785a02d018845d124f3baed5d814ad/Documentaci%C3%B3n/Diagrama%20de%20casos%20de%20usos.png"></div>
+<div align="center"><img src="https://github.com/jeison25/ProyectoDiplomado/blob/51867b50766b5982af0864779f5458e7e432b10c/Documentaci%C3%B3n/Diagrama_Casos%20de%20Uso_2.png"></div>
 
 En el documento <A HREF="https://github.com/jeison25/ProyectoDiplomado/blob/d8f4fa570c785a02d018845d124f3baed5d814ad/Documentaci%C3%B3n/RF_RNF.docx"> RF_RNF.docx </A> encontrará la información de <strong>Requerimientos funcionales y no funcionales</strong>.
+
+<h1 align="center"> DIAGRAMA DE COMPONENTES</h1>
+<div align="center"><img src="https://github.com/jeison25/ProyectoDiplomado/blob/d9b84e2fef5bcbd9c5ae425b4e64cd89a4219753/Documentaci%C3%B3n/Diagrama%20de%20componentes.png"></div>
 
 ## CASOS DE USO
 
@@ -139,6 +127,13 @@ Este caso de uso proporciona una visión general de cómo una plataforma web pue
 
 <div align="center"><img src="https://github.com/jeison25/ProyectoDiplomado/blob/25bc449e797e27dd83ba7722f70df5bb81cd2f87/Documentaci%C3%B3n/diagrama.drawio%20(1).png"></div>
 
+
+<div align="center"><img src="https://github.com/jeison25/ProyectoDiplomado/blob/daa45fa1850eb1d5036ee5732de9e1f9622c53f9/Documentaci%C3%B3n/diagrama.drawio.png"></div>
+
+
+<div align="center"><img src="https://github.com/jeison25/ProyectoDiplomado/blob/b405ae3a5c529b0da4598472e16bfd32bd54accd/Documentaci%C3%B3n/diagrama%201.drawio.png"></div>
+
+
 <h1 align="center"> DIAGRAMA DE DESPLIEGUE </h1>
 <div align="center"><img src="https://github.com/jeison25/ProyectoDiplomado/blob/0e155c1709e8615e5edb02a5ffe785a8a5f57dd1/Documentaci%C3%B3n/Diagrama%20Despliegue-P%C3%A1gina-3.jpg"></div>
 
@@ -146,38 +141,10 @@ Este caso de uso proporciona una visión general de cómo una plataforma web pue
 
 <div align="center"><img src="https://github.com/jeison25/ProyectoDiplomado/blob/0e155c1709e8615e5edb02a5ffe785a8a5f57dd1/Documentaci%C3%B3n/Diagrama%20de%20clases.jpg"></div>
 
-<h1 align="center"> Conclusiones: </h1>
-
-1.	Eficiencia en el despliegue: La utilización de contenedores permite un despliegue rápido y eficiente de la plataforma web en el entorno del conjunto residencial. 
-
-2.	Escalabilidad: Los contenedores ofrecen la capacidad de escalar la plataforma web de manera horizontal, permitiendo manejar el crecimiento y la demanda del conjunto residencial sin problemas. 
-
-3.	Aislamiento de componentes: Los contenedores proporcionan un entorno aislado para cada componente de la plataforma web, lo que aumenta la seguridad y evita interferencias entre diferentes partes del sistema. 
-
-4.	Mantenimiento sencillo: Los contenedores facilitan la actualización y el mantenimiento de la plataforma web, ya que permiten la implementación de cambios de manera modular y sin interrupciones en otros componentes. 
-
-5.	Portabilidad: Los contenedores ofrecen una alta portabilidad, lo que significa que la plataforma web puede ejecutarse de manera consistente en diferentes entornos, independientemente del sistema operativo o la infraestructura subyacente. 
-
-6.	Modularidad y flexibilidad: Al utilizar contenedores, es posible descomponer la plataforma web en módulos independientes, lo que facilita la adición o eliminación de funcionalidades según las necesidades del conjunto residencial. 
-
-7.	Balanceo de carga: Los contenedores permiten implementar estrategias de balanceo de carga, distribuyendo las solicitudes de los usuarios entre varios contenedores para mejorar el rendimiento y la disponibilidad de la plataforma web. 
-
-8.	Facilidad de replicación: La replicación de contenedores es sencilla, lo que garantiza la disponibilidad continua de la plataforma web incluso en caso de fallos o mantenimiento en algún contenedor específico. 
-
-9.	Gestión centralizada: Mediante el uso de herramientas de orquestación de contenedores, es posible gestionar y controlar todos los contenedores de la plataforma web desde una ubicación central, simplificando la administración del conjunto residencial. 
-
-10.	Optimización de recursos: Los contenedores permiten una mejor utilización de los recursos de hardware disponibles, ya que se pueden compartir entre varios contenedores, maximizando así el rendimiento y la eficiencia de la plataforma web. 
-Estas conclusiones destacan las ventajas clave de utilizar contenedores para desarrollar una plataforma web en un conjunto residencial, brindando eficiencia, escalabilidad, flexibilidad y una gestión simplificada.
-
-
-# ERRORES ENCONTRADOS
-
-1. Realizar enfoque a un conjunto especifico, en inicio se oriento de manera general.
-2. 
-
 # MANUAL DE DESPLIEGUE
 
-1. Clonar este repositorio remoto en su máquina local:
+1. Instalar Git en la maquina local.
+2. Clonar este repositorio remoto en su máquina local:
    
    git clone https://github.com/jeison25/ProyectoDiplomado.git
 
@@ -204,8 +171,8 @@ Estas conclusiones destacan las ventajas clave de utilizar contenedores para des
    
    docker run -dit --name servicios -v RUTA_LOCAL\Documents\Cliente:/home/proyecto openjdk:8 /bin/bash
 
-9. Una vez ejecutado el contenedor de servicios iniciar mariadb: 
-
+9. Una vez ejecutado el contenedor de servicios instalar e iniciar mariadb: 
+   apt-get install mariadb-server mariadb-client
    service mariadb start
 
 10. Abrir un nuevo CMD y crear una red y adicionar estos contenedores a dicha red: 
@@ -214,19 +181,51 @@ Estas conclusiones destacan las ventajas clave de utilizar contenedores para des
     docker network connect dist servicios
     docker network connect dist glassfish
 
-11. De nuevo en el contenedor de servicios, ejecutar el .jar para ello introducir los comandos: 
+11. De nuevo en el contenedor de servicios ingresar a mysql (por defecto no tiene clave, se deja este espacio en blanco): 
+    mysql -u root -p 
+    
+12. Crear la base de datos y las tablas: 
+    
+    CREATE DATABASE conjunto;
+    USE conjunto;
+    CREATE TABLE residentes (id_residente INT NOT NULL AUTO_INCREMENT, nombre varchar(500), apellido varchar(500), usuario varchar(500), clave varchar(500), bloque varchar(500), apto varchar(500), estado varchar(500), estado_res varchar(500), tipo_res varchar(500), intentos varchar(500), PRIMARY KEY(id_residente));
+CREATE TABLE administradores(id_admon INT NOT NULL AUTO_INCREMENT, nombre varchar(500), apellido varchar(500),usuario varchar(500), clave varchar(500), PRIMARY KEY(id_admon));
+CREATE TABLE vehiculos (id_vehiculo INT NOT NULL AUTO_INCREMENT,tipoVehiculo VARCHAR(500),placaVehiculo VARCHAR(500),marca VARCHAR(500), modelo VARCHAR(500), Noparqueadero varchar(500), bloque varchar(500), apto varchar(500), PRIMARY KEY(id_vehiculo));
+CREATE TABLE mascotas (id_mascota INT NOT NULL AUTO_INCREMENT, tipoMascota varchar(500), nombreMascota varchar(500),edadMascota varchar(500), bloque varchar(500), apto varchar(500), PRIMARY KEY(id_mascota));
+exit    
+
+13. En el contenedor de servicios, ejecutar el .jar para ello introducir los comandos: 
     
     cd /home/proyecto
     java -jar ServiciosProyecto-1.0-SNAPSHOT.jar
 
-12. Ingresar a localhost:4848 ingresar con usuario admin y clave admin, posteriormente subir el .war a glassfish en Applications > Upload a war (El .war se encuentra en la ruta repositorio local/ProyectoDiplomado/ProyectoConjunto/target)
+14. Ingresar a localhost:4848 ingresar con usuario admin y clave admin, posteriormente subir el .war a glassfish en Applications > Upload a war (El .war se encuentra en la ruta repositorio local/ProyectoDiplomado/ProyectoConjunto/target)
 
-13. Una vez cargado el war al servidor de aplicaciones, ingresar a la url localhost:8080/ProyectoConjunto-1.0-SNAPSHOT
-14. El usuario inicial como administrador es jeison y la clave es 1234. 
-    
-   
+15. Una vez cargado el war al servidor de aplicaciones, ingresar a la url localhost:8080/ProyectoConjunto-1.0-SNAPSHOT
+16. El usuario inicial como administrador es jeison y la clave es 1234. 
+<h1 align="center"> Conclusiones: </h1>
+
+1.	Eficiencia en el despliegue: La utilización de contenedores permite un despliegue rápido y eficiente de la plataforma web en el entorno del conjunto residencial. 
+
+2.	Escalabilidad: Los contenedores ofrecen la capacidad de escalar la plataforma web de manera horizontal, permitiendo manejar el crecimiento y la demanda del conjunto residencial sin problemas. 
+
+3.	Aislamiento de componentes: Los contenedores proporcionan un entorno aislado para cada componente de la plataforma web, lo que aumenta la seguridad y evita interferencias entre diferentes partes del sistema. 
+
+4.	Mantenimiento sencillo: Los contenedores facilitan la actualización y el mantenimiento de la plataforma web, ya que permiten la implementación de cambios de manera modular y sin interrupciones en otros componentes. 
+
+5.	Portabilidad: Los contenedores ofrecen una alta portabilidad, lo que significa que la plataforma web puede ejecutarse de manera consistente en diferentes entornos, independientemente del sistema operativo o la infraestructura subyacente. 
+
+6.	Modularidad y flexibilidad: Al utilizar contenedores, es posible descomponer la plataforma web en módulos independientes, lo que facilita la adición o eliminación de funcionalidades según las necesidades del conjunto residencial. 
+
+7.	Balanceo de carga: Los contenedores permiten implementar estrategias de balanceo de carga, distribuyendo las solicitudes de los usuarios entre varios contenedores para mejorar el rendimiento y la disponibilidad de la plataforma web. 
+
+8.	Facilidad de replicación: La replicación de contenedores es sencilla, lo que garantiza la disponibilidad continua de la plataforma web incluso en caso de fallos o mantenimiento en algún contenedor específico. 
+
+9.	Gestión centralizada: Mediante el uso de herramientas de orquestación de contenedores, es posible gestionar y controlar todos los contenedores de la plataforma web desde una ubicación central, simplificando la administración del conjunto residencial. 
+
+10.	Optimización de recursos: Los contenedores permiten una mejor utilización de los recursos de hardware disponibles, ya que se pueden compartir entre varios contenedores, maximizando así el rendimiento y la eficiencia de la plataforma web. 
+Estas conclusiones destacan las ventajas clave de utilizar contenedores para desarrollar una plataforma web en un conjunto residencial, brindando eficiencia, escalabilidad, flexibilidad y una gestión simplificada.
 
 
-
-
+# URL DOCKER HUB https://hub.docker.com/r/jeisonmelvin/glassfish
 
