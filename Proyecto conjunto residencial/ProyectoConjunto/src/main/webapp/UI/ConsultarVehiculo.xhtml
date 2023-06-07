@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link href="../css/style.css" rel="stylesheet" type="text/css"></link>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
+        <title>Consultar residentes</title>
+    </h:head>
+    <h:body>
+        <header>
+            <section id="menu">
+                <h:graphicImage class ="imagen_menu" value="../images/Logo.png"/>
+                <ul class="nav">
+                    <li><a href="../faces/UI/MenuResidentes.xhtml" title="Inicio"><img class= "icono" src="../images/hogar.png" />Inicio</a></li>
+                    <li><a href= "../faces/index.xhtml">Cerrar sesión</a></li>
+                </ul>
+            </section>
+        </header>
+       <h:form>
+            <table>
+                <thead>
+                    <tr><th colspan="2">Consulta de vehiculo</th> </tr>                    
+                </thead>
+                <tbody>
+                    <tr><td>Bloque*</td> <td><h:inputText  value="#{Vehiculos.bloque}" label="Ingrese el bloque" required="true"></h:inputText></td></tr>
+                    <tr><td>Apto*</td> <td><h:inputText value="#{Vehiculos.apto}" label="Ingrese el apartamento" required="true"></h:inputText></td></tr>
+                    <tr><td colspan="2"><h:commandButton id="boton" class="boton2" action="salidaConsultaVehiculo" value="Consultar"></h:commandButton></td></tr>
+                </tbody>
+            </table>
+        </h:form>
+    </h:body>
+</html>

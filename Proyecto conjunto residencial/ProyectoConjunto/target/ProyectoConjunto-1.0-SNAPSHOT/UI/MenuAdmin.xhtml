@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link href="../css/style.css" rel="stylesheet" type="text/css"></link>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
+        <title>Menu administrador</title>
+    </h:head>
+    <h:body>
+        <header>
+            <section id="menu">
+                <h:graphicImage class ="imagen_menu" value="../images/Logo.png"/>
+                <ul class="nav">
+                    <li><a href="../faces/UI/MenuAdmin.xhtml" title="Inicio"><img class= "icono" src="../images/hogar.png" />Inicio</a></li>
+                    <li><a href= "../faces/index.xhtml">Cerrar sesión</a></li>
+                </ul>
+            </section>
+        </header>
+        <h:form class="button2">
+            <h1>Menú Administrador</h1>
+            <h:commandButton class = "boton2" action ="AgregarUsuarios" value="AGREGAR RESIDENTES"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="AgregarMascotas" value="AGREGAR MASCOTAS"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="AgregarVehiculos" value="AGREGAR VEHICULOS"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="ModificarResidentes" value="MODIFICAR RESIDENTES"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="ModificarMascotas" value="MODIFICAR MASCOTAS"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="ModificarVehiculos" value="MODIFICAR VEHICULOS"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="EliminarResidentes" value="ELIMINAR RESIDENTES"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="EliminarMascota" value="ELIMINAR MASCOTA"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="EliminarVehiculo" value="ELIMINAR VEHICULO"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="ConsultarMascotasRes" value="CONSULTAR MASCOTAS POR RESIDENTE"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="ConsultarVehiculoRes" value="CONSULTAR VEHICULOS POR RESIDENTE"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="ConsultarUsuarios" value="CONSULTAR RESIDENTES"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="ConsultaResidenteMoroso" value="CONSULTAR RESIDENTE MOROSO"></h:commandButton><br/><br/>
+            <h:commandButton class = "boton2" action ="DesbloqueoResidente" value="DESBLOQUEAR RESIDENTE"></h:commandButton><br/><br/>
+        </h:form>
+    </h:body>
+</html>

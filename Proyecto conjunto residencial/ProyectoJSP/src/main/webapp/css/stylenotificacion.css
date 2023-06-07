@@ -1,0 +1,14 @@
+.warning{
+    color:rgb(255, 255, 255);
+    background-color: #003852; opacity: 0.9;
+    border: 2px dotted rgb(41, 170, 41);padding:8px;margin:auto;    
+    text-align:center
+}
+
+.td {
+    font-size: 10px;
+    font-family: Verdana;
+    border: 2px solid rgb(252, 252, 252);padding:8px;margin:auto;
+    color: #08588d;
+    text-align: center
+  }
